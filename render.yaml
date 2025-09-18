@@ -1,13 +1,10 @@
 services:
   - type: web
     name: densyst
-    env: php
     plan: free
-    region: oregon  # or frankfurt if you're closer to EU/Asia
-    buildCommand: |
-      composer install --no-dev --optimize-autoloader
-    startCommand: |
-      php -S 0.0.0.0:10000 -t public
+    region: oregon
+    env: docker
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: APP_ENV
         value: prod
