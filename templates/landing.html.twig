@@ -1,11 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>DenSyst - Landing Page</title>
-    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
-</head>
-<body>
-    <h1>Welcome to DenSyst 🦷</h1>
-    <p>Your dental management system.</p>
-</body>
-</html>
+{% extends 'base.html.twig' %}
+{% block title %}Home - DenSyst{% endblock %}
+
+{% block body %}
+<!-- 🔹 Hero Section -->
+<header class="relative text-white h-screen">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="{{ asset('images/hero-image.png') }}" alt="Dental Care" class="w-full h-full object-cover">
+        <!-- Overlay for readability -->
+        <div class="absolute inset-0 bg-[#132d60]/70"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative max-w-7xl mx-auto px-6 h-full flex flex-col justify-center items-center text-center md:items-start md:text-left">
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            Modern <span class="text-green-400">Dental Care</span> Made Simple
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl mb-8 opacity-90">
+            DenSyst helps clinics streamline scheduling, manage patient records, 
+            and gain insights with smart analytics all in one platform.
+        </p>
+        <div class="space-x-4">
+            <a href="{{ path('features') }}" 
+               class="bg-white text-[#132d60] px-8 py-3 rounded-lg font-semibold shadow hover:bg-gray-100 transition">
+               Explore Features
+            </a>
+            <a href="{{ path('login') }}" 
+               class="bg-[#3D7A3F] text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-green-700 transition">
+               Get Started
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- 🔹 Features Section -->
+<section class="py-20 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-[#132d60]">Why Choose DenSyst?</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition text-center">
+            <h3 class="text-2xl font-semibold mb-3">📅 Easy Scheduling</h3>
+            <p class="text-gray-600">Book appointments seamlessly with real-time dentist availability.</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition text-center">
+            <h3 class="text-2xl font-semibold mb-3">🦷 Patient Records</h3>
+            <p class="text-gray-600">Securely track dental history tooth-by-tooth with cloud storage.</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition text-center">
+            <h3 class="text-2xl font-semibold mb-3">📊 Smart Analytics</h3>
+            <p class="text-gray-600">Monitor clinic performance and generate insightful reports.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 🔹 Call-to-Action Section -->
+<section class="py-16 bg-[#132d60] text-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to modernize your clinic?</h2>
+    <p class="mb-6 text-lg opacity-90">Join DenSyst today and experience smarter dental management.</p>
+    <a href="{{ path('login') }}" 
+       class="bg-[#3D7A3F] px-8 py-3 rounded-lg font-semibold shadow hover:bg-green-700 transition">
+       Get Started Now
+    </a>
+</section>
+{% endblock %}
